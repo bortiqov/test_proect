@@ -1,0 +1,64 @@
+* {
+  --primary: #d31e30;
+}
+@font-face {
+  font-family: Raleway;
+  src: url("../../fonts/Raleway-Regular.ttf");
+}
+@font-face {
+  font-family: Tisa;
+  src: url("../../fonts/TisaSansPro-Medium.woff2");
+}
+body,
+html {
+  font-family: Tisa;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+.primary-btn {
+  padding: 15px 20px;
+  background: var(--primary);
+  display: inline-flex;
+  font-size: 22px;
+  border-radius: 4px;
+}
+.primary-btn:hover img {
+  animation: nextAnim 1s ease infinite;
+}
+@keyframes nextAnim {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(8px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.hover-scale {
+  transition: all ease 0.5s;
+}
+.hover-scale:hover {
+  transform: scale(1.1);
+}
+.h-max {
+  height: max-content;
+  height: -moz-max-content;
+}
+
+@keyframes callMe {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+.main-shadow {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}

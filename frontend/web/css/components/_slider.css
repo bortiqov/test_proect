@@ -1,0 +1,23 @@
+.main-slider .swiper-container {
+  height: calc(100vh - 90px);
+}
+.full-slide-img {
+  height: calc(100vh - 90px);
+}
+.type-2.full-slide-img {
+  height: calc(90vh - 90px);;
+}
+.full-slide-gradient {
+  position: absolute;
+  inset: 0;
+  background: rgba(43, 43, 43, 0.3);
+}
+.swiper-pagination-bullet {
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  opacity: 1;
+}
+.swiper-pagination-bullet-active {
+  background-color: var(--primary);
+}
