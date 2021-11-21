@@ -76,11 +76,11 @@ class SettingsSearch extends Settings
             'lang' => $this->lang,
         ]);
 
-        $query->andFilterWhere(['ilike', 'title', $this->title])
-            ->andFilterWhere(['ilike', 'description', $this->description])
-            ->andFilterWhere(['ilike', 'slug', $this->slug])
-            ->andFilterWhere(['ilike', 'default', $this->default])
-            ->andFilterWhere(['ilike', 'lang_hash', $this->lang_hash]);
+        $query->andFilterWhere(['like', 'title', $this->title])
+            ->andFilterWhere(['like', 'description', $this->description])
+            ->andFilterWhere(['like', 'slug', $this->slug])
+            ->andFilterWhere(['like', 'default', $this->default])
+            ->andFilterWhere(['like', 'lang_hash', $this->lang_hash]);
 
         return $dataProvider;
     }

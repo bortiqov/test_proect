@@ -17,7 +17,7 @@ class m211105_142052_create_banner_table extends Migration
     {
         $this->createTable('{{%banner}}', [
             'id' => $this->primaryKey(),
-            'title' => 'json',
+            'title' =>  $this->text(),
             'file_id' => $this->integer(),
             'status' => $this->integer(),
             'type' => $this->integer(),

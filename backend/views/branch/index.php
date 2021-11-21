@@ -58,17 +58,21 @@ $this->params['breadcrumbs'][] = $this->title;
                             'attribute' => 'title',
                             'headerOptions' => ['style' => ''],
                             'contentOptions' => ['style' => ''],
-                            'value' => 'title.' . \Yii::$app->language
+                            'value' => function ($model) {
+                                return $model->title[Yii::$app->language];
+                            }
                         ],
                         [
                             'attribute' => 'address',
                             'headerOptions' => ['style' => ''],
                             'contentOptions' => ['style' => ''],
-                            'value' => 'address.' . \Yii::$app->language
+                            'value' => function ($model) {
+                                return $model->address[Yii::$app->language];
+                            }
                         ],
                         [
                             'attribute' => 'file_id',
-                            'label' =>'Image',
+                            'label' => 'Image',
                             'headerOptions' => ['style' => 'width:80px;text-align:center'],
                             'contentOptions' => ['style' => 'text-align:center'],
                             'format' => 'raw',

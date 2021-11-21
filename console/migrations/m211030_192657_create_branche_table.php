@@ -17,8 +17,8 @@ class m211030_192657_create_branche_table extends Migration
     {
         $this->createTable('{{%branch}}', [
             'id' => $this->primaryKey(),
-            'title' => 'json',
-            'address' => 'json',
+            'title' =>  $this->text(),
+            'address' =>  $this->text(),
             'phone' => $this->string(),
             'file_id' => $this->integer(),
             'status' => $this->integer(),

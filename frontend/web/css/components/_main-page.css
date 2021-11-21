@@ -28,6 +28,8 @@
 }
 .about-video {
   position: relative;
+  height: max-content;
+  height: -moz-max-content;
 }
 .about-video video {
   width: 100%;

@@ -2,6 +2,7 @@
 
 namespace common\modules\post\models;
 
+use common\behaviors\JsoneBehaviors;
 use common\behaviors\SlugBehavior;
 use common\modules\file\behaviors\FileModelBehavior;
 use common\modules\file\behaviors\InputModelBehavior;
@@ -96,6 +97,19 @@ class Post extends \yii\db\ActiveRecord
                 'class' => InputModelBehavior::className(),
             ],
             'class' => SlugBehavior::class,
+
+            'json_encode_decode_title' => [
+                'class' => JsoneBehaviors::class,
+                'attribute' => 'title'
+            ],
+            'json_encode_decode_description' => [
+                'class' => JsoneBehaviors::class,
+                'attribute' => 'description'
+            ],
+            'json_encode_decode_anons' => [
+                'class' => JsoneBehaviors::class,
+                'attribute' => 'anons'
+            ],
         ]);
     }
 

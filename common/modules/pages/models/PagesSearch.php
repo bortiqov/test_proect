@@ -107,11 +107,11 @@ class PagesSearch extends Pages
         if ($this->title) {
             $query->andWhere("(lower(page.title->>'ru') ILIKE '%$this->title%') or (lower(page.title->>'en') ILIKE '%$this->title%') or (lower(page.title->>'uz') ILIKE '%$this->title%')");
         }
-        $query->andFilterWhere(['ilike', 'pages.subtitle', $this->subtitle])
-            ->andFilterWhere(['ilike', 'pages.description', $this->description])
-            ->andFilterWhere(['ilike', 'pages.content', $this->content])
-            ->andFilterWhere(['ilike', 'page.slug', $this->slug])
-            ->andFilterWhere(['ilike', 'pages.template', $this->template]);
+        $query->andFilterWhere(['like', 'pages.subtitle', $this->subtitle])
+            ->andFilterWhere(['like', 'pages.description', $this->description])
+            ->andFilterWhere(['like', 'pages.content', $this->content])
+            ->andFilterWhere(['like', 'page.slug', $this->slug])
+            ->andFilterWhere(['like', 'pages.template', $this->template]);
 
         return $dataProvider;
     }

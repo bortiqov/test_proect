@@ -80,12 +80,12 @@ $languages = \common\components\Util::getActiveLanguages(Yii::$app->language);
                             </div>
                         </div>
                         <div class="pl-8 lang-drop">
-                            <a class="text-lg lang-drop-active" href="#!"> <?= Inflector::camel2words($currentLang) ?>
+                            <a class="text-lg lang-drop-active" href="#!"> <?= $currentLang ?>
                                 <img src="/images/svg/flag<?= $currentLang ?>.svg" alt="">
                             </a>
                             <div class="lang-drop-menu hide">
                                 <?php foreach ($languages as $language): ?>
-                                    <a href="<?= \yii\helpers\Url::current(['language' => $language->code]) ?>"><?= Inflector::camel2words($language->code) ?>
+                                    <a href="<?= \yii\helpers\Url::current(['language' => $language->code]) ?>"><?= $language->code ?>
                                         <img src="/images/svg/flag<?= $language->code ?>.svg" alt=""> </a>
                                 <?php endforeach; ?>
                             </div>

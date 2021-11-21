@@ -2,6 +2,7 @@
 
 namespace common\models;
 
+use common\behaviors\JsoneBehaviors;
 use common\modules\file\models\File;
 use phpDocumentor\Reflection\Types\Array_;
 use phpDocumentor\Reflection\Types\String_;
@@ -53,6 +54,15 @@ class Banner extends \yii\db\ActiveRecord
         ];
     }
 
+    public function behaviors()
+    {
+        return [
+          'json_encode_decode' => [
+              'class' => JsoneBehaviors::class,
+              'attribute' => 'title'
+          ]
+        ];
+    }
     /**
      * {@inheritdoc}
      */

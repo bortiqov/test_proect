@@ -19,10 +19,10 @@ class m211030_181414_create_university_table extends Migration
 
         $this->createTable('university', [
             'id' => $this->primaryKey(),
-            'title' => 'json',
-            'name' => 'json',
-            'description' => 'json',
-            'address' => 'json',
+            'title' =>  $this->text(),
+            'name' =>  $this->text(),
+            'description' =>  $this->text(),
+            'address' =>  $this->text(),
             'slug' => $this->string(),
             'photo' => $this->string(),
             'created_at' => $this->integer()->notNull(),

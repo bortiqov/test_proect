@@ -63,9 +63,9 @@ class ReviewSearch extends Review
             'created_at' => $this->created_at,
         ]);
 
-        $query->andFilterWhere(['ilike', 'first_name', $this->first_name])
-            ->andFilterWhere(['ilike', 'last_name', $this->last_name])
-            ->andFilterWhere(['ilike', 'message', $this->message]);
+        $query->andFilterWhere(['like', 'first_name', $this->first_name])
+            ->andFilterWhere(['like', 'last_name', $this->last_name])
+            ->andFilterWhere(['like', 'message', $this->message]);
 
         return $dataProvider;
     }

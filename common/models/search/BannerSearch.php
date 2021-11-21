@@ -63,7 +63,7 @@ class BannerSearch extends Banner
             'status' => $this->status,
         ]);
 
-        $query->andFilterWhere(['ilike', 'title', $this->title]);
+        $query->andFilterWhere(['like', 'title', $this->title]);
 
         return $dataProvider;
     }

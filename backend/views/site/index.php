@@ -16,7 +16,6 @@ $this->registerCssFile('/css/bootstrap.min.css', ['depends' => ThetaAdminAsset::
 
     <div class="jumbotron">
         <h1>Congratulations!</h1>
-        <?php echo Yii::$app->security->generatePasswordHash("perevod.uz");?>
         <p class="lead">Welkome to Perevod Consult admin panel</p>
     </div>
 

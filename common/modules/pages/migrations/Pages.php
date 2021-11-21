@@ -19,10 +19,10 @@ class Pages extends Migration
 
         $this->createTable($this->tableName, [
             'id' => $this->primaryKey(),
-            'title' => 'json',
-            'subtitle' => 'json',
-            'description' => 'json',
-            'content' => 'json',
+            'title' => $this->text(),
+            'subtitle' =>  $this->text(),
+            'description' =>  $this->text(),
+            'content' =>  $this->text(),
             'slug' => $this->string(255),
             'template' => $this->string(255),
             'date_create' => $this->integer(),

@@ -71,20 +71,20 @@ class PostSearch extends Post
 
         $query->andWhere(['<','published_at',time()]);
         if ($this->title) {
-            $query->andWhere("(lower(post.title->>'ru') ILIKE '%$this->title%') or (lower(post.title->>'en') ILIKE '%$this->title%') or (lower(post.title->>'uz') ILIKE '%$this->title%')");
+            $query->andFilterWhere(['like', 'title', $this->title]);
         }
 
         if ($this->description) {
-            $query->andWhere("(lower(post.description->>'ru') ILIKE '%$this->description%') or (lower(post.description->>'en') ILIKE '%$this->description%') or (lower(post.description->>'uz') ILIKE '%$this->description%')");
+            $query->andFilterWhere(['like', 'description', $this->description]);
 
         }
 
         if ($this->anons) {
-            $query->andWhere("(lower(post.anons->>'ru') ILIKE '%$this->anons%') or (lower(post.anons->>'en') ILIKE '%$this->anons%') or (lower(post.anons->>'uz') ILIKE '%$this->anons%')");
+            $query->andFilterWhere(['like', 'anons', $this->anons]);
         }
 
-        $query->andFilterWhere(['ilike', 'slug', $this->slug])
-            ->andFilterWhere(['ilike', 'photo', $this->photo]);
+        $query->andFilterWhere(['like', 'slug', $this->slug])
+            ->andFilterWhere(['like', 'photo', $this->photo]);
         return $dataProvider;
     }
 }

@@ -28,7 +28,7 @@ class UniversityController extends \yii\web\Controller
         $otherUniversity = University::find()
             ->andWhere(['status' => University::STATUS_ACTIVE])
             ->andWhere(['not in','id',$model->id])
-            ->orderBy('random()')->limit(3)->all();
+            ->orderBy('updated_at')->limit(3)->all();
         return $this->render('show',[
             'model' => $model,
             'otherUniversity' => $otherUniversity

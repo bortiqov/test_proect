@@ -2,6 +2,7 @@
 
 namespace common\models;
 
+use common\behaviors\JsoneBehaviors;
 use common\behaviors\SlugBehavior;
 use common\modules\file\behaviors\FileModelBehavior;
 use common\modules\file\behaviors\InputModelBehavior;
@@ -10,6 +11,7 @@ use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\helpers\ArrayHelper;
+use yii\helpers\Json;
 
 /**
  * This is the model class for table "university".
@@ -67,11 +69,28 @@ class University extends \yii\db\ActiveRecord
             'input_filemanager' => [
                 'class' => InputModelBehavior::className(),
             ],
+
+            'json_encode_decode_title' => [
+                'class' => JsoneBehaviors::class,
+                'attribute' => 'title'
+            ],
+            'json_encode_decode_name' => [
+                'class' => JsoneBehaviors::class,
+                'attribute' => 'name'
+            ],
+                'json_encode_decode_description' => [
+                    'class' => JsoneBehaviors::class,
+                    'attribute' => 'description'
+                ],
+            'json_encode_decode_address' => [
+                'class' => JsoneBehaviors::class,
+                'attribute' => 'address'
+            ],
             'added_slug' => [
                 'class' => SlugBehavior::class,
                 'attribute_title' => 'name'
 
-            ]
+            ],
         ]);
     }
     /**

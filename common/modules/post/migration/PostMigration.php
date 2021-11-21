@@ -17,8 +17,8 @@ class PostMigration extends \yii\db\Migration
         $this->createTable('post', [
             'id' => $this->primaryKey(),
             'author' => $this->integer()->notNull(),
-            'title' => 'json',
-            'description' => 'json',
+            'title' =>  $this->text(),
+            'description' =>  $this->text(),
             'slug' => $this->string(),
             'photo' => $this->string(),
             'type' => $this->integer(),
@@ -28,7 +28,7 @@ class PostMigration extends \yii\db\Migration
             'top' => $this->integer(),
             'viewed' => $this->integer(),
             'status' => $this->integer(),
-            'anons' => 'json',
+            'anons' =>  $this->text(),
             'short_link' => $this->integer(8)
         ], $options);
 

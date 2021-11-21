@@ -63,20 +63,16 @@ class UniversitySearch extends University
             'short_link' => $this->short_link,
         ]);
 
-        $query->andFilterWhere(['ilike', 'slug', $this->slug])
-            ->andFilterWhere(['ilike', 'photo', $this->photo]);
 
         if ($this->title) {
-            $query->andWhere("(lower(university.title->>'ru') ILIKE '%$this->title%') or (lower(university.title->>'en') ILIKE '%$this->title%') or (lower(university.title->>'uz') ILIKE '%$this->title%')");
-        }
+            $query->andFilterWhere(['like', 'title', $this->title]);        }
 
         if ($this->description) {
-            $query->andWhere("(lower(university.description->>'ru') ILIKE '%$this->description%') or (lower(university.description->>'en') ILIKE '%$this->description%') or (lower(university.description->>'uz') ILIKE '%$this->description%')");
-
+            $query->andFilterWhere(['like', 'description', $this->description]);
         }
 
         if ($this->name) {
-            $query->andWhere("(lower(university.name->>'ru') ILIKE '%$this->name%') or (lower(university.name->>'en') ILIKE '%$this->name%') or (lower(university.name->>'uz') ILIKE '%$this->name%')");
+            $query->andFilterWhere(['like', 'name', $this->name]);
         }
 
         return $dataProvider;

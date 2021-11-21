@@ -67,8 +67,7 @@ use common\widgets\Alert;
                 <div class="row align-items-center justify-content-xl-between">
                     <div style="margin: 0 auto;">
                         <div class="copyright text-center text-xl-left text-muted">
-                            © <?= date('Y') ?> <a href="https://rteco.uz" class="font-weight-bold ml-1" target="_blank">Powered
-                                by rteco</a>
+                            © <?= date('Y') ?>
                         </div>
                     </div>
                 </div>
